@@ -62,6 +62,8 @@ public class LinkSegTree implements IndexList {
             left = right = null;
             this.par = par;
             leafCnt = 0;
+            setOffset = -1;
+            addFlag = 0;
         }
 
         boolean isLeaf() {
@@ -70,6 +72,21 @@ public class LinkSegTree implements IndexList {
 
         // 下推标记
         void pushDown() {
+
+            if (setOffset != -1) {
+                tailOffset = setOffset;
+                if (left != null) {
+                    left.setOffset = setOffset;
+                    // 原本有add的标记的就不对了
+                    left.addFlag = 0;
+                }
+                if (right != null) {
+                    right.setOffset = setOffset;
+                    // 原本有add的标记的就不对了
+                    right.addFlag = 0;
+                }
+                setOffset = -1;
+            }
 
             if (addFlag != 0) {
                 tailOffset += addFlag;
@@ -81,7 +98,6 @@ public class LinkSegTree implements IndexList {
                 }
                 addFlag = 0;
             }
-
         }
 
         // 反向更新时的pushup操作
@@ -233,7 +249,20 @@ public class LinkSegTree implements IndexList {
 
     // 删除字符的逻辑
     private void removeString(int offset, int length) {
+        // 首先找到首尾所在的页
+        // 设首为head, 尾为tail
+        // 那么, (head , head + 1.. tail - 1)为止,都是一个set操作
+        // (tail .. sum)为止是一个update操作
+        // 分成两个操作维护
 
+        FindDto dto = new FindDto();
+        dto.offset = offset;
+        int head = findByOffset(dto);
+        dto.offset = offset + length;
+        int tail = findByOffset(dto);
+
+        updateSet(1, treeRoot.leafCnt, head, tail - 1, offset, treeRoot);
+        updateAdd(1, treeRoot.leafCnt, tail, treeRoot.leafCnt, -length, treeRoot);
     }
 
     private void updateAdd(int nl, int nr, int tl, int tr, int value, Node o) {
@@ -255,6 +284,25 @@ public class LinkSegTree implements IndexList {
 
         updateAdd(nl, nr - o.right.leafCnt, tl, tr, value, o.left);
         updateAdd(nl + o.left.leafCnt, nr, tl, tr, value, o.right);
+        o.pushUp();
+    }
+
+    private void updateSet(int nl, int nr, int tl, int tr, int value, Node o) {
+        o.pushDown();
+        if (tl > tr) {
+            return;
+        }
+
+        if (nl > tr || nr < tl) {
+            return;
+        }
+        if (nl >= tl && nr <= tr) {
+            o.setOffset = value;
+            o.pushDown();
+            return;
+        }
+        updateSet(nl, nr - o.right.leafCnt, tl, tr, value, o.left);
+        updateSet(nl + o.left.leafCnt, nr, tl, tr, value, o.right);
         o.pushUp();
     }
 
