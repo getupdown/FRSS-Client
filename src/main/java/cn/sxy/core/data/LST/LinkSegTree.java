@@ -1,5 +1,6 @@
 package cn.sxy.core.data.LST;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -74,6 +75,9 @@ public class LinkSegTree implements IndexList {
         void pushDown() {
 
             if (setOffset != -1) {
+                // 如果说是叶子,记录一下前后差值
+                int cha = setOffset - tailOffset;
+
                 tailOffset = setOffset;
                 if (left != null) {
                     left.setOffset = setOffset;
@@ -85,6 +89,13 @@ public class LinkSegTree implements IndexList {
                     // 原本有add的标记的就不对了
                     right.addFlag = 0;
                 }
+                // set操作只会操作在被删除的那几段上,所以可以利用这个来更新
+                if (isLeaf()) {
+                    int save = (ele.getLength() + cha);
+                    // 如果长度小于0了 就说明这段完全没了
+                    ele.setLength(save >= 0 ? save : 0);
+                    ele.setEndOffset(tailOffset);
+                }
                 setOffset = -1;
             }
 
@@ -95,6 +106,9 @@ public class LinkSegTree implements IndexList {
                 }
                 if (right != null) {
                     right.addFlag += addFlag;
+                }
+                if (isLeaf()) {
+                    ele.setEndOffset(tailOffset);
                 }
                 addFlag = 0;
             }
@@ -248,23 +262,36 @@ public class LinkSegTree implements IndexList {
     }
 
     // 删除字符的逻辑
-    private void removeString(int offset, int length) {
+    public void removeString(int offset, int length) {
         // 首先找到首尾所在的页
         // 设首为head, 尾为tail
-        // 那么, (head , head + 1.. tail - 1)为止,都是一个set操作
-        // (tail .. sum)为止是一个update操作
-        // 分成两个操作维护
 
-        FindDto dto = new FindDto();
-        dto.offset = offset;
-        int head = findByOffset(dto);
-        dto.offset = offset + length;
-        int tail = findByOffset(dto);
+        FindDto dto1 = new FindDto();
+        dto1.offset = offset;
+        int headrk = findByOffset(dto1);
+        FindDto dto2 = new FindDto();
+        dto2.offset = offset + length;
+        int tailrk = findByOffset(dto2);
 
-        updateSet(1, treeRoot.leafCnt, head, tail - 1, offset, treeRoot);
-        updateAdd(1, treeRoot.leafCnt, tail, treeRoot.leafCnt, -length, treeRoot);
+        // 如果两页是同一页
+        // 那么只要改这一页的endoffset和length
+        // update(tailrk + 1, end, -length)即可
+        if (headrk == tailrk) {
+
+        } else {
+            // 如果两页不是同一页
+            // 即中间有些页被完全置空
+            // 首先把尾页分裂,左边是被删除的部分，右边是保留的部分
+            // 那么tailrk就是原来的被删除的最后一页
+            // tailrk + 1是新页
+            // 那么就相当于 [headrk~tailrk]整体一次set成offset-1操作, 他们的长度会在过程中被更新
+            // [tailrk + 1, end] 就是整体的add操作, 尾偏移量减去length即可,长度不用变
+        }
+
+
     }
 
+    // add操作用于偏移
     private void updateAdd(int nl, int nr, int tl, int tr, int value, Node o) {
 
         o.pushDown();
@@ -334,6 +361,22 @@ public class LinkSegTree implements IndexList {
         while (node != null) {
             node.pushUp();
             node = node.par;
+        }
+    }
+
+    // 在一些特殊情况下需要强制更新某个叶子的值
+    private void reverseUpdateForce(Node node) {
+        List<Node> nodes = new ArrayList<>();
+
+        Node tmp = node;
+        while (tmp != null) {
+            nodes.add(tmp);
+            tmp = tmp.par;
+        }
+
+        // 自顶向下更新
+        for (int i = nodes.size() - 1; i >= 0; i--) {
+            nodes.get(i).pushDown();
         }
     }
 

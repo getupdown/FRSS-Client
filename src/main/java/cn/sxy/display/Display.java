@@ -10,7 +10,13 @@ import javax.swing.WindowConstants;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Display {
+
+    private static Logger logger = LoggerFactory.getLogger(Display.class);
+
     public static void main(String[] args) {
         // 创建 JFrame 实例
         JFrame frame = new JFrame("Login Example");
@@ -56,19 +62,16 @@ public class Display {
         JTextField userText = new JTextField(20);
         userText.setBounds(100, 20, 165, 25);
         panel.add(userText);
+
         userText.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-                System.out.println("插入");
-                System.out.println(e.getOffset());
-                System.out.println(e.getLength());
+                logger.info("在{}插入{}个字符", e.getOffset(), e.getLength());
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                System.out.println("删除");
-                System.out.println(e.getOffset());
-                System.out.println(e.getLength());
+                logger.info("删掉从{}以后{}个字符", e.getOffset(), e.getLength());
             }
 
             @Override
@@ -83,6 +86,8 @@ public class Display {
         JLabel passwordLabel = new JLabel("Password:");
         passwordLabel.setBounds(10, 50, 80, 25);
         panel.add(passwordLabel);
+
+        passwordLabel.requestFocus();
 
         /*
          *这个类似用于输入的文本域

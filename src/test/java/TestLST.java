@@ -27,14 +27,8 @@ public class TestLST {
     public void test() {
         linkSegTree.addString(3, 1);
         linkSegTree.fortest();
-        linkSegTree.addString(2,4);
+        linkSegTree.removeString(3, 1);
         linkSegTree.fortest();
-        linkSegTree.addString(8, 4);
-        linkSegTree.fortest();
-        linkSegTree.addString(12, 20);
-        linkSegTree.fortest();
-        linkSegTree.addString(17,20);
-        linkSegTree.addString(30,100);
     }
 
 }
