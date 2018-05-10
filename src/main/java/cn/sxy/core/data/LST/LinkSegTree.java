@@ -32,7 +32,7 @@ public class LinkSegTree implements IndexList {
     private Set<Page> dirtyPageSet = new HashSet<>();
 
     // 节点类
-    private static class Node {
+    protected static class Node {
 
         private static int DONT_SET = -10;
 
@@ -71,12 +71,20 @@ public class LinkSegTree implements IndexList {
             addFlag = DONT_ADD;
         }
 
-        boolean isLeaf() {
+        public int getTailOffset() {
+            return tailOffset;
+        }
+
+        public void setTailOffset(int tailOffset) {
+            this.tailOffset = tailOffset;
+        }
+
+        public boolean isLeaf() {
             return !(ele == null);
         }
 
         // 下推标记
-        void pushDown() {
+        public void pushDown() {
 
             if (setOffset != DONT_SET) {
                 // 如果说是叶子,记录一下前后差值
@@ -119,7 +127,7 @@ public class LinkSegTree implements IndexList {
         }
 
         // 反向更新时的pushup操作
-        void pushUp() {
+        public void pushUp() {
             if (isLeaf()) {
                 return;
             }
@@ -311,23 +319,27 @@ public class LinkSegTree implements IndexList {
 
             int newLen = dto2.offset - nowLeftOffset + 1;
 
-            now.left = new Node(now, true);
-            now.right = new Node(now, true);
-            // 设置左边
-            now.left.ele.setEndOffset(dto2.offset);
-            now.left.tailOffset = dto2.offset;
-            now.left.ele.setLength(newLen);
-            now.left.leafCnt = 1;
+            // 如果新页不为空，再分裂
+            if (nowLen - newLen > 0) {
+                now.left = new Node(now, true);
+                now.right = new Node(now, true);
+                // 设置左边
+                now.left.ele.setEndOffset(dto2.offset);
+                now.left.tailOffset = dto2.offset;
+                now.left.ele.setLength(newLen);
+                now.left.leafCnt = 1;
+                // 设置右边
+                now.right.ele.setEndOffset(dto2.node.tailOffset);
+                now.right.tailOffset = dto2.node.tailOffset;
+                now.right.ele.setLength(nowLen - newLen);
+                now.right.leafCnt = 1;
 
-            now.right.ele.setEndOffset(dto2.node.tailOffset);
-            now.right.tailOffset = dto2.node.tailOffset;
-            now.right.ele.setLength(nowLen - newLen);
-            now.right.leafCnt = 1;
-
-            setDirtyPage(now.left.ele);
-            setDirtyPage(now.right.ele);
-            now.ele = null;
-
+                setDirtyPage(now.left.ele);
+                setDirtyPage(now.right.ele);
+                now.ele = null;
+            } else {
+                setDirtyPage(now.ele);
+            }
             reverseUpdateFromBottom(now);
 
             // 2.分裂完之后，两次操作分解
@@ -339,11 +351,8 @@ public class LinkSegTree implements IndexList {
 
     }
 
-    // add操作用于偏移
-    private void updateAdd(int nl, int nr, int tl, int tr, int value, Node o) {
-
+    private void segTreeTraverse(int nl, int nr, int tl, int tr, int value, Node o, Function function) {
         o.pushDown();
-
         if (tl > tr) {
             return;
         }
@@ -352,33 +361,26 @@ public class LinkSegTree implements IndexList {
             return;
         }
         if (nl >= tl && nr <= tr) {
-            o.addFlag += value;
-            o.pushDown();
+            function.apply(o);
             return;
         }
-
-        updateAdd(nl, nr - o.right.leafCnt, tl, tr, value, o.left);
-        updateAdd(nl + o.left.leafCnt, nr, tl, tr, value, o.right);
+        segTreeTraverse(nl, nr - o.right.leafCnt, tl, tr, value, o.left, function);
+        segTreeTraverse(nl + o.left.leafCnt, nr, tl, tr, value, o.right, function);
         o.pushUp();
     }
 
     private void updateSet(int nl, int nr, int tl, int tr, int value, Node o) {
-        o.pushDown();
-        if (tl > tr) {
-            return;
-        }
+        segTreeTraverse(nl, nr, tl, tr, value, o, (tar) -> {
+            tar.setOffset = value;
+            tar.pushDown();
+        });
+    }
 
-        if (nl > tr || nr < tl) {
-            return;
-        }
-        if (nl >= tl && nr <= tr) {
-            o.setOffset = value;
-            o.pushDown();
-            return;
-        }
-        updateSet(nl, nr - o.right.leafCnt, tl, tr, value, o.left);
-        updateSet(nl + o.left.leafCnt, nr, tl, tr, value, o.right);
-        o.pushUp();
+    private void updateAdd(int nl, int nr, int tl, int tr, int value, Node o) {
+        segTreeTraverse(nl, nr, tl, tr, value, o, (tar) -> {
+            tar.addFlag += value;
+            tar.pushDown();
+        });
     }
 
     private void __build(List<Page> list, int lt, int rt, Node o, Node p) {
@@ -470,6 +472,11 @@ public class LinkSegTree implements IndexList {
         testa = 1;
         fortestReverse(treeRoot);
         logger.info("————————————————————");
+    }
+
+    @FunctionalInterface
+    public interface Function {
+        void apply(Node o);
     }
 
     // 测试

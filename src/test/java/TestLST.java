@@ -48,6 +48,12 @@ public class TestLST {
         remove(0, 3);
         remove(0, 14);
         add(4,10);
+        remove(0, 16);
+        add(1,1);
+        add(1,10);
+
+        remove(11,1);
+        remove(2,8);
     }
 
     private void add(int offset, int length) {
