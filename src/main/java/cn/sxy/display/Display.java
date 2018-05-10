@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.event.DocumentEvent;
@@ -59,8 +60,10 @@ public class Display {
         /*
          * 创建文本域用于用户输入
          */
-        JTextField userText = new JTextField(20);
-        userText.setBounds(100, 20, 165, 25);
+        JTextArea userText = new JTextArea();
+        userText.setBounds(20, 20, 200,200);
+        userText.setRows(20);
+        userText.setColumns(40);
         panel.add(userText);
 
         userText.getDocument().addDocumentListener(new DocumentListener() {
@@ -82,20 +85,20 @@ public class Display {
             }
         });
 
-        // 输入密码的文本域
-        JLabel passwordLabel = new JLabel("Password:");
-        passwordLabel.setBounds(10, 50, 80, 25);
-        panel.add(passwordLabel);
-
-        passwordLabel.requestFocus();
+//        // 输入密码的文本域
+//        JLabel passwordLabel = new JLabel("Password:");
+//        passwordLabel.setBounds(10, 50, 80, 25);
+//        panel.add(passwordLabel);
+//
+//        passwordLabel.requestFocus();
 
         /*
          *这个类似用于输入的文本域
          * 但是输入的信息会以点号代替，用于包含密码的安全性
          */
-        JPasswordField passwordText = new JPasswordField(20);
-        passwordText.setBounds(100, 50, 165, 25);
-        panel.add(passwordText);
+//        JPasswordField passwordText = new JPasswordField(20);
+//        passwordText.setBounds(100, 50, 165, 25);
+//        panel.add(passwordText);
 
         // 创建登录按钮
         JButton loginButton = new JButton("login");

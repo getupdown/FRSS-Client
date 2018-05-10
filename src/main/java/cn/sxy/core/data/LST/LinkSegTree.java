@@ -351,7 +351,7 @@ public class LinkSegTree implements IndexList {
 
     }
 
-    private void segTreeTraverse(int nl, int nr, int tl, int tr, int value, Node o, Function function) {
+    private void segTreeSearch(int nl, int nr, int tl, int tr, int value, Node o, Function function) {
         o.pushDown();
         if (tl > tr) {
             return;
@@ -364,20 +364,22 @@ public class LinkSegTree implements IndexList {
             function.apply(o);
             return;
         }
-        segTreeTraverse(nl, nr - o.right.leafCnt, tl, tr, value, o.left, function);
-        segTreeTraverse(nl + o.left.leafCnt, nr, tl, tr, value, o.right, function);
+        segTreeSearch(nl, nr - o.right.leafCnt, tl, tr, value, o.left, function);
+        segTreeSearch(nl + o.left.leafCnt, nr, tl, tr, value, o.right, function);
         o.pushUp();
     }
 
+    // 线段树常规操作
     private void updateSet(int nl, int nr, int tl, int tr, int value, Node o) {
-        segTreeTraverse(nl, nr, tl, tr, value, o, (tar) -> {
+        segTreeSearch(nl, nr, tl, tr, value, o, (tar) -> {
             tar.setOffset = value;
             tar.pushDown();
         });
     }
 
+    // 线段树常规操作
     private void updateAdd(int nl, int nr, int tl, int tr, int value, Node o) {
-        segTreeTraverse(nl, nr, tl, tr, value, o, (tar) -> {
+        segTreeSearch(nl, nr, tl, tr, value, o, (tar) -> {
             tar.addFlag += value;
             tar.pushDown();
         });
@@ -475,7 +477,7 @@ public class LinkSegTree implements IndexList {
     }
 
     @FunctionalInterface
-    public interface Function {
+    private interface Function {
         void apply(Node o);
     }
 

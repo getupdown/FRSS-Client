@@ -15,4 +15,9 @@ public class MessageHandler implements MessageTreater {
     public void treat(Message message, IndexList indexList) {
         // todo implement
     }
+
+    @Override
+    public void Receive(Message message) {
+
+    }
 }
