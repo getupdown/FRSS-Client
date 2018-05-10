@@ -34,6 +34,10 @@ public class LinkSegTree implements IndexList {
     // 节点类
     private static class Node {
 
+        private static int DONT_SET = -10;
+
+        private static int DONT_ADD = 0;
+
         // 线段树左右孩子，父亲节点
         Node left;
         Node right;
@@ -63,8 +67,8 @@ public class LinkSegTree implements IndexList {
             left = right = null;
             this.par = par;
             leafCnt = 0;
-            setOffset = -1;
-            addFlag = 0;
+            setOffset = DONT_SET;
+            addFlag = DONT_ADD;
         }
 
         boolean isLeaf() {
@@ -74,19 +78,19 @@ public class LinkSegTree implements IndexList {
         // 下推标记
         void pushDown() {
 
-            if (setOffset != -1) {
+            if (setOffset != DONT_SET) {
                 // 如果说是叶子,记录一下前后差值
                 int cha = setOffset - tailOffset;
 
                 tailOffset = setOffset;
                 if (left != null) {
                     left.setOffset = setOffset;
-                    // 原本有add的标记的就不对了
+                    // 原本有add的标记, add标记被覆盖
                     left.addFlag = 0;
                 }
                 if (right != null) {
                     right.setOffset = setOffset;
-                    // 原本有add的标记的就不对了
+                    // 原本有add的标记, add标记被覆盖
                     right.addFlag = 0;
                 }
                 // set操作只会操作在被删除的那几段上,所以可以利用这个来更新
@@ -96,10 +100,10 @@ public class LinkSegTree implements IndexList {
                     ele.setLength(save >= 0 ? save : 0);
                     ele.setEndOffset(tailOffset);
                 }
-                setOffset = -1;
+                setOffset = DONT_SET;
             }
 
-            if (addFlag != 0) {
+            if (addFlag != DONT_ADD) {
                 tailOffset += addFlag;
                 if (left != null) {
                     left.addFlag += addFlag;
@@ -110,7 +114,7 @@ public class LinkSegTree implements IndexList {
                 if (isLeaf()) {
                     ele.setEndOffset(tailOffset);
                 }
-                addFlag = 0;
+                addFlag = DONT_ADD;
             }
         }
 
@@ -121,7 +125,7 @@ public class LinkSegTree implements IndexList {
             }
             left.pushDown();
             right.pushDown();
-            int cnt = (left == null ? 0 : left.leafCnt) + (right == null ? 0 : right.leafCnt);
+            int cnt = left.leafCnt + right.leafCnt;
             int offset = right.tailOffset;
             this.leafCnt = cnt;
             this.tailOffset = offset;
@@ -166,7 +170,6 @@ public class LinkSegTree implements IndexList {
 
         logger.info("在{}位置加入{}个字符", offset, length);
 
-        Node tar = null;
         // 叶子总数
         int sum = treeRoot.leafCnt;
 
@@ -177,7 +180,7 @@ public class LinkSegTree implements IndexList {
         int rk = findByOffset(findDto);
         assert findDto.node != null;
 
-        tar = findDto.node;
+        Node tar = findDto.node;
 
         // 分两种情况
         // 如果增加了这么多之后，还不用分裂的
@@ -265,19 +268,32 @@ public class LinkSegTree implements IndexList {
     public void removeString(int offset, int length) {
         // 首先找到首尾所在的页
         // 设首为head, 尾为tail
+        logger.info("删掉从{}以后{}个字符", offset, length);
 
         FindDto dto1 = new FindDto();
         dto1.offset = offset;
         int headrk = findByOffset(dto1);
+        // 这里指的是被删除的最后一个字符, offset + length 开始的字符都是存在的
         FindDto dto2 = new FindDto();
-        dto2.offset = offset + length;
+        dto2.offset = offset + length - 1;
         int tailrk = findByOffset(dto2);
 
         // 如果两页是同一页
         // 那么只要改这一页的endoffset和length
         // update(tailrk + 1, end, -length)即可
         if (headrk == tailrk) {
+            int preOffset = dto1.node.ele.getEndOffset();
+            int preLen = dto1.node.ele.getLength();
 
+            dto1.node.tailOffset = preOffset - length;
+            dto1.node.ele.setEndOffset(preOffset - length);
+            dto1.node.ele.setLength(preLen - length);
+            //todo 建立一个page到node的反向指针
+            setDirtyPage(dto1.node.ele);
+
+            reverseUpdateFromBottom(dto1.node);
+
+            updateAdd(1, treeRoot.leafCnt, tailrk + 1, treeRoot.leafCnt, -length, treeRoot);
         } else {
             // 如果两页不是同一页
             // 即中间有些页被完全置空
@@ -286,8 +302,40 @@ public class LinkSegTree implements IndexList {
             // tailrk + 1是新页
             // 那么就相当于 [headrk~tailrk]整体一次set成offset-1操作, 他们的长度会在过程中被更新
             // [tailrk + 1, end] 就是整体的add操作, 尾偏移量减去length即可,长度不用变
-        }
 
+            // 1.尾页分裂
+            Node now = dto2.node;
+            int nowLen = dto2.node.ele.getLength();
+
+            int nowLeftOffset = now.ele.getEndOffset() - now.ele.getLength() + 1;
+
+            int newLen = dto2.offset - nowLeftOffset + 1;
+
+            now.left = new Node(now, true);
+            now.right = new Node(now, true);
+            // 设置左边
+            now.left.ele.setEndOffset(dto2.offset);
+            now.left.tailOffset = dto2.offset;
+            now.left.ele.setLength(newLen);
+            now.left.leafCnt = 1;
+
+            now.right.ele.setEndOffset(dto2.node.tailOffset);
+            now.right.tailOffset = dto2.node.tailOffset;
+            now.right.ele.setLength(nowLen - newLen);
+            now.right.leafCnt = 1;
+
+            setDirtyPage(now.left.ele);
+            setDirtyPage(now.right.ele);
+            now.ele = null;
+
+            reverseUpdateFromBottom(now);
+
+            // 2.分裂完之后，两次操作分解
+            // todo 空页回收机制
+            updateSet(1, treeRoot.leafCnt, headrk, tailrk, offset - 1, treeRoot);
+
+            updateAdd(1, treeRoot.leafCnt, tailrk + 1, treeRoot.leafCnt, -length, treeRoot);
+        }
 
     }
 
@@ -421,6 +469,7 @@ public class LinkSegTree implements IndexList {
     public void fortest() {
         testa = 1;
         fortestReverse(treeRoot);
+        logger.info("————————————————————");
     }
 
     // 测试

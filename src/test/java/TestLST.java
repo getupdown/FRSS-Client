@@ -25,9 +25,38 @@ public class TestLST {
 
     @Test
     public void test() {
-        linkSegTree.addString(3, 1);
+//        linkSegTree.addString(3, 1);
+//        linkSegTree.fortest();
+//        linkSegTree.removeString(3, 1);
+//        linkSegTree.fortest();
+//        linkSegTree.removeString(3, 1);
+//        linkSegTree.fortest();
+//        linkSegTree.removeString(3, 1);
+//        linkSegTree.fortest();
+//        linkSegTree.removeString(3, 3);
+//        linkSegTree.fortest();
+//        linkSegTree.removeString(0, 7);
+//        linkSegTree.fortest();
+
+        add(3, 1);
+        remove(3, 1);
+        remove(3, 1);
+        remove(3, 1);
+        remove(3, 3);
+        remove(0, 7);
+        add(0,20);
+        remove(0, 3);
+        remove(0, 14);
+        add(4,10);
+    }
+
+    private void add(int offset, int length) {
+        linkSegTree.addString(offset, length);
         linkSegTree.fortest();
-        linkSegTree.removeString(3, 1);
+    }
+
+    private void remove(int offset, int length) {
+        linkSegTree.removeString(offset, length);
         linkSegTree.fortest();
     }
 

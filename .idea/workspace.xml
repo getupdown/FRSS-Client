@@ -7,21 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72c48a48-398f-4363-89a7-8a94ebd54d50" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/FRSS_Client_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/sxy/display/A.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/logs/notify-subscription.log" afterPath="$PROJECT_DIR$/logs/notify-subscription.log" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/sxy/core/data/LST/LinkSegTree.java" afterPath="$PROJECT_DIR$/src/main/java/cn/sxy/core/data/LST/LinkSegTree.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/sxy/display/Display.java" afterPath="$PROJECT_DIR$/src/main/java/cn/sxy/display/Display.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestLST.java" afterPath="$PROJECT_DIR$/src/test/java/TestLST.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/sxy/core/data/LST/LinkSegTree$FindDto.class" afterPath="$PROJECT_DIR$/target/classes/cn/sxy/core/data/LST/LinkSegTree$FindDto.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/sxy/core/data/LST/LinkSegTree$Node.class" afterPath="$PROJECT_DIR$/target/classes/cn/sxy/core/data/LST/LinkSegTree$Node.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/sxy/core/data/LST/LinkSegTree.class" afterPath="$PROJECT_DIR$/target/classes/cn/sxy/core/data/LST/LinkSegTree.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/sxy/display/Display$1.class" afterPath="$PROJECT_DIR$/target/classes/cn/sxy/display/Display$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/sxy/display/Display.class" afterPath="$PROJECT_DIR$/target/classes/cn/sxy/display/Display.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestLST.class" afterPath="$PROJECT_DIR$/target/test-classes/TestLST.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,16 +22,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LinkSegTree.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LinkSegTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/LST/LinkSegTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="283" column="30" lean-forward="true" selection-start-line="283" selection-start-column="30" selection-end-line="283" selection-end-column="30" />
+            <state relative-caret-position="490">
+              <caret line="117" column="13" lean-forward="true" selection-start-line="117" selection-start-column="13" selection-end-line="117" selection-end-column="13" />
               <folding>
-                <element signature="method#pushUp#0;class#Node#0;class#LinkSegTree#0" expanded="false" />
+                <element signature="e#1433#1434#0" expanded="true" />
+                <element signature="e#1478#1479#0" expanded="true" />
                 <element signature="method#findByOffset#0;class#LinkSegTree#0" expanded="false" />
                 <element signature="method#addString#0;class#LinkSegTree#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/MQ/MessageHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Page.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/indexLinkedList/Page.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-301">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,14 +72,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestLST.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestLST.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestLST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+            <state relative-caret-position="599">
+              <caret line="49" column="18" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/indexLinkedList/IndexList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,7 +107,7 @@
       <file leaf-file-name="A.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/display/A.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
+            <state relative-caret-position="601">
               <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -104,7 +123,7 @@
       <file leaf-file-name="ComponentEvent.java" pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/awt/event/ComponentEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
+            <state relative-caret-position="1025">
               <caret line="67" column="13" lean-forward="false" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
               <folding />
             </state>
@@ -114,43 +133,8 @@
       <file leaf-file-name="TextHitInfo.java" pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/awt/font/TextHitInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
+            <state relative-caret-position="4175">
               <caret line="225" column="23" lean-forward="false" selection-start-line="225" selection-start-column="23" selection-end-line="225" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JTextComponent.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/javax/swing/text/JTextComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="292" column="22" lean-forward="false" selection-start-line="292" selection-start-column="22" selection-end-line="292" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JTextField.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/javax/swing/JTextField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="163" column="38" lean-forward="false" selection-start-line="163" selection-start-column="38" selection-end-line="163" selection-end-column="38" />
-              <folding>
-                <element signature="e#6952#6953#0" expanded="true" />
-                <element signature="e#6993#6994#0" expanded="true" />
-                <element signature="e#15536#15537#0" expanded="true" />
-                <element signature="e#15593#15594#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActionListener.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/awt/event/ActionListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -194,10 +178,10 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/sxy/core/data/indexLinkedList/IndexListImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/sxy/core/data/indexLinkedList/IndexList.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/sxy/core/data/indexLinkedList/Page.java" />
-        <option value="$PROJECT_DIR$/src/test/java/TestLST.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/sxy/core/data/LST/LinkSegTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/sxy/display/A.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/sxy/display/Display.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/sxy/core/data/LST/LinkSegTree.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestLST.java" />
       </list>
     </option>
   </component>
@@ -213,7 +197,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="823" />
@@ -284,9 +268,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -384,11 +368,18 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="FRSS-Client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FRSS-Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -417,7 +408,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Display">
+  <component name="RunManager" selected="JUnit.TestLST.test">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -559,9 +550,9 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.Display" />
-        <item index="1" class="java.lang.String" itemvalue="Application.A" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestLST.test" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestLST.test" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Display" />
+        <item index="2" class="java.lang.String" itemvalue="Application.A" />
       </list>
     </recent_temporary>
   </component>
@@ -579,44 +570,45 @@
       <option name="presentableId" value="Default" />
       <updated>1525619476933</updated>
       <workItem from="1525619481409" duration="27983000" />
-      <workItem from="1525775560416" duration="20154000" />
+      <workItem from="1525775560416" duration="21385000" />
+      <workItem from="1525930176172" duration="8669000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestLST_test - 2018.05.08 at 19h 30m 58s.xml">
+    <history-entry file="TestLST_test - 2018.05.10 at 15h 47m 58s.xml">
       <configuration name="TestLST.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLST_test - 2018.05.08 at 19h 32m 11s.xml">
+    <history-entry file="TestLST_test - 2018.05.10 at 15h 48m 07s.xml">
       <configuration name="TestLST.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLST_test - 2018.05.08 at 19h 33m 29s.xml">
+    <history-entry file="TestLST_test - 2018.05.10 at 15h 49m 09s.xml">
       <configuration name="TestLST.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLST_test - 2018.05.08 at 19h 33m 44s.xml">
+    <history-entry file="TestLST_test - 2018.05.10 at 15h 50m 15s.xml">
       <configuration name="TestLST.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLST_test - 2018.05.09 at 11h 19m 36s.xml">
+    <history-entry file="TestLST_test - 2018.05.10 at 15h 51m 12s.xml">
       <configuration name="TestLST.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLST_test - 2018.05.09 at 11h 19m 41s.xml">
+    <history-entry file="TestLST_test - 2018.05.10 at 15h 55m 18s.xml">
       <configuration name="TestLST.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLST_test - 2018.05.09 at 13h 44m 35s.xml">
+    <history-entry file="TestLST_test - 2018.05.10 at 15h 55m 28s.xml">
       <configuration name="TestLST.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLST_test - 2018.05.09 at 14h 08m 53s.xml">
+    <history-entry file="TestLST_test - 2018.05.10 at 15h 56m 25s.xml">
       <configuration name="TestLST.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLST_test - 2018.05.09 at 14h 47m 10s.xml">
+    <history-entry file="TestLST_test - 2018.05.10 at 15h 57m 40s.xml">
       <configuration name="TestLST.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLST_test - 2018.05.09 at 14h 48m 32s.xml">
+    <history-entry file="TestLST_test - 2018.05.10 at 15h 59m 35s.xml">
       <configuration name="TestLST.test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48137000" />
+    <option name="totallyTimeSpent" value="58037000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -628,23 +620,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="823" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882273" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21703297" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33366436" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30350664" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21847071" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18743344" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18903089" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Compute Code Lines" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -676,10 +668,114 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/LST/LinkSegTree.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3425">
+          <caret line="281" column="24" lean-forward="true" selection-start-line="281" selection-start-column="24" selection-end-line="281" selection-end-column="24" />
+          <folding>
+            <element signature="e#1433#1434#0" expanded="true" />
+            <element signature="e#1478#1479#0" expanded="true" />
+            <element signature="method#findByOffset#0;class#LinkSegTree#0" expanded="false" />
+            <element signature="method#addString#0;class#LinkSegTree#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/display/Display.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+          <folding>
+            <element signature="e#1846#1847#0" expanded="true" />
+            <element signature="e#1933#1934#0" expanded="true" />
+            <element signature="e#2012#2013#0" expanded="true" />
+            <element signature="e#2101#2102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestLST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/display/A.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1300">
+          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#936#937#0" expanded="true" />
+            <element signature="e#990#991#0" expanded="true" />
+            <element signature="e#2441#2442#0" expanded="true" />
+            <element signature="e#2464#2465#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/awt/event/ComponentEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1025">
+          <caret line="67" column="13" lean-forward="false" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/awt/font/TextHitInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4175">
+          <caret line="225" column="23" lean-forward="false" selection-start-line="225" selection-start-column="23" selection-end-line="225" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/javax/swing/text/JTextComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7300">
+          <caret line="292" column="22" lean-forward="false" selection-start-line="292" selection-start-column="22" selection-end-line="292" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/javax/swing/JTextField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4075">
+          <caret line="163" column="38" lean-forward="false" selection-start-line="163" selection-start-column="38" selection-end-line="163" selection-end-column="38" />
+          <folding>
+            <element signature="e#6952#6953#0" expanded="true" />
+            <element signature="e#6993#6994#0" expanded="true" />
+            <element signature="e#15536#15537#0" expanded="true" />
+            <element signature="e#15593#15594#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/awt/event/ActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/LST/LinkSegTree.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8275">
           <caret line="331" column="18" lean-forward="true" selection-start-line="331" selection-start-column="18" selection-end-line="331" selection-end-column="18" />
           <folding>
-            <element signature="method#pushUp#0;class#Node#0;class#LinkSegTree#0" expanded="false" />
+            <element signature="e#1433#1434#0" expanded="true" />
+            <element signature="e#1478#1479#0" expanded="true" />
             <element signature="method#findByOffset#0;class#LinkSegTree#0" expanded="false" />
             <element signature="method#addString#0;class#LinkSegTree#0" expanded="false" />
           </folding>
@@ -711,9 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21250">
           <caret line="878" column="46" lean-forward="false" selection-start-line="878" selection-start-column="46" selection-end-line="878" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#39347#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -754,16 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/MQ/MessageHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/MQ/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -775,41 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <marker date="1513730552000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1513730552000" expanded="false" signature="143:269" ph="..." />
-            <marker date="1513730552000" expanded="false" signature="446:457" ph=" { " />
-            <marker date="1513730552000" expanded="false" signature="470:476" ph=" }" />
-            <marker date="1513730552000" expanded="true" signature="538:705" ph="{...}" />
-            <marker date="1513730552000" expanded="true" signature="731:802" ph="{...}" />
-            <marker date="1513730552000" expanded="true" signature="840:1022" ph="{...}" />
-            <marker date="1513730552000" expanded="true" signature="1063:1232" ph="{...}" />
-            <marker date="1513730552000" expanded="true" signature="1277:1462" ph="{...}" />
-            <marker date="1513730552000" expanded="false" signature="1504:1515" ph=" { " />
-            <marker date="1513730552000" expanded="false" signature="1554:1560" ph=" }" />
-            <marker date="1513730552000" expanded="true" signature="1610:1818" ph="{...}" />
-            <marker date="1513730552000" expanded="true" signature="1866:2054" ph="{...}" />
-            <marker date="1513730552000" expanded="true" signature="2102:2471" ph="{...}" />
-            <marker date="1513730552000" expanded="true" signature="2512:2631" ph="{...}" />
-            <marker date="1513730552000" expanded="false" signature="2658:2669" ph=" { " />
-            <marker date="1513730552000" expanded="false" signature="2704:2710" ph=" }" />
-            <marker date="1513730552000" expanded="false" signature="2740:2751" ph=" { " />
-            <marker date="1513730552000" expanded="false" signature="2781:2787" ph=" }" />
-            <marker date="1513730552000" expanded="false" signature="2819:2830" ph=" { " />
-            <marker date="1513730552000" expanded="false" signature="2861:2867" ph=" }" />
-            <marker date="1513730552000" expanded="false" signature="2890:2901" ph=" { " />
-            <marker date="1513730552000" expanded="false" signature="2928:2934" ph=" }" />
-            <marker date="1513730552000" expanded="false" signature="2965:2976" ph=" { " />
-            <marker date="1513730552000" expanded="false" signature="3006:3012" ph=" }" />
-            <marker date="1513730552000" expanded="false" signature="3056:3067" ph=" { " />
-            <marker date="1513730552000" expanded="false" signature="3101:3107" ph=" }" />
-            <marker date="1513730552000" expanded="false" signature="3140:3151" ph=" { " />
-            <marker date="1513730552000" expanded="false" signature="3181:3187" ph=" }" />
-            <marker date="1513730552000" expanded="false" signature="3224:3235" ph=" { " />
-            <marker date="1513730552000" expanded="false" signature="3269:3275" ph=" }" />
-            <marker date="1513730552000" expanded="false" signature="3301:3312" ph=" { " />
-            <marker date="1513730552000" expanded="false" signature="3332:3338" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -817,7 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1414">
           <caret line="128" column="17" lean-forward="false" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -825,7 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
           <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -833,7 +879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,7 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1633">
           <caret line="112" column="17" lean-forward="false" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="95" column="22" lean-forward="true" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,7 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-158">
           <caret line="85" column="17" lean-forward="false" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,30 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21250">
           <caret line="878" column="46" lean-forward="false" selection-start-line="878" selection-start-column="46" selection-end-line="878" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#39347#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/indexLinkedList/Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="31" column="23" lean-forward="true" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-          <folding>
-            <element signature="e#280#281#0" expanded="false" />
-            <element signature="e#312#313#0" expanded="false" />
-            <element signature="e#505#506#0" expanded="false" />
-            <element signature="e#547#548#0" expanded="false" />
-            <element signature="e#577#578#0" expanded="false" />
-            <element signature="e#606#607#0" expanded="false" />
-            <element signature="e#647#648#0" expanded="false" />
-            <element signature="e#683#684#0" expanded="false" />
-            <element signature="e#715#716#0" expanded="false" />
-            <element signature="e#743#744#0" expanded="false" />
-            <element signature="e#786#787#0" expanded="false" />
-            <element signature="e#820#821#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -904,33 +922,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/notify-subscription.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/indexLinkedList/IndexList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/notify-subscription.log" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/javax/swing/event/DocumentListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
           <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,7 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,7 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="43" column="50" lean-forward="true" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,13 +959,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="1894" column="33" lean-forward="false" selection-start-line="1894" selection-start-column="33" selection-end-line="1894" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/awt/event/ActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
+        <state relative-caret-position="525">
           <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
           <folding />
         </state>
@@ -976,7 +972,7 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/javax/swing/text/JTextComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="7300">
           <caret line="292" column="22" lean-forward="false" selection-start-line="292" selection-start-column="22" selection-end-line="292" selection-end-column="22" />
           <folding />
         </state>
@@ -984,7 +980,7 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/javax/swing/JTextField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="3175">
           <caret line="163" column="38" lean-forward="false" selection-start-line="163" selection-start-column="38" selection-end-line="163" selection-end-column="38" />
           <folding>
             <element signature="e#6952#6953#0" expanded="true" />
@@ -997,7 +993,7 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/awt/font/TextHitInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
+        <state relative-caret-position="4175">
           <caret line="225" column="23" lean-forward="false" selection-start-line="225" selection-start-column="23" selection-end-line="225" selection-end-column="23" />
           <folding />
         </state>
@@ -1005,26 +1001,24 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/awt/event/ComponentEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
+        <state relative-caret-position="1025">
           <caret line="67" column="13" lean-forward="false" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestLST.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/MQ/MessageHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1044,7 +1038,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/display/A.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
+        <state relative-caret-position="601">
           <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1058,12 +1052,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/LST/LinkSegTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="283" column="30" lean-forward="true" selection-start-line="283" selection-start-column="30" selection-end-line="283" selection-end-column="30" />
+        <state relative-caret-position="490">
+          <caret line="117" column="13" lean-forward="true" selection-start-line="117" selection-start-column="13" selection-end-line="117" selection-end-column="13" />
           <folding>
-            <element signature="method#pushUp#0;class#Node#0;class#LinkSegTree#0" expanded="false" />
+            <element signature="e#1433#1434#0" expanded="true" />
+            <element signature="e#1478#1479#0" expanded="true" />
             <element signature="method#findByOffset#0;class#LinkSegTree#0" expanded="false" />
             <element signature="method#addString#0;class#LinkSegTree#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/indexLinkedList/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-301">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/sxy/core/data/indexLinkedList/IndexList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestLST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="49" column="18" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
