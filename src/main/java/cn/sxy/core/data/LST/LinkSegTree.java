@@ -8,7 +8,6 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cn.sxy.core.data.MQ.Message;
 import cn.sxy.core.data.indexLinkedList.IndexList;
 import cn.sxy.core.data.indexLinkedList.Page;
 
@@ -47,9 +46,8 @@ public class LinkSegTree implements IndexList {
         // 右偏移量
         int tailOffset;
 
-        // 链表前后
+        // 链表next指针
         Node next;
-        Node prev;
 
         // 页元素
         Page ele;
@@ -178,9 +176,6 @@ public class LinkSegTree implements IndexList {
 
         logger.info("在{}位置加入{}个字符", offset, length);
 
-        // 叶子总数
-        int sum = treeRoot.leafCnt;
-
         FindDto findDto = new FindDto();
         findDto.offset = offset;
 
@@ -205,6 +200,8 @@ public class LinkSegTree implements IndexList {
 
             // 反向更新
             reverseUpdateFromBottom(tar);
+            // 叶子总数
+            int sum = treeRoot.leafCnt;
             // 把[rk+1, sum]所有增加length
             updateAdd(1, sum, rk + 1, sum, length, treeRoot);
 
@@ -214,7 +211,7 @@ public class LinkSegTree implements IndexList {
             // 可以考虑重构策略
 
             logger.info("需要分裂");
-
+            // todo 通过next指针判断下一页是否是空页，利用空页
             tar.left = new Node(tar, true);
             tar.right = new Node(tar, true);
 
@@ -443,11 +440,6 @@ public class LinkSegTree implements IndexList {
     }
 
     @Override
-    public void updateByMessage(Message message) {
-
-    }
-
-    @Override
     public IndexList build(List<Page> list) {
         // 从1开始
         Node start = new Node(null, false);
@@ -457,21 +449,28 @@ public class LinkSegTree implements IndexList {
     }
 
     int testa = 0;
+    int fuck = 0;
 
     public void fortestReverse(Node o) {
         o.pushDown();
         if (o.isLeaf()) {
-            logger.info("第{}页,尾偏移量{},长度为{}", testa, o.tailOffset, o.ele.getLength());
+            // logger.info("第{}页,尾偏移量{},长度为{}", testa, o.tailOffset, o.ele.getLength());
             testa++;
             return;
         }
+        int tmp = fuck;
+        fuck++;
+        System.out.println(tmp + " -> " + (fuck));
         fortestReverse(o.left);
+        fuck++;
+        System.out.println(tmp + " -> " + (fuck));
         fortestReverse(o.right);
         o.pushUp();
     }
 
     public void fortest() {
         testa = 1;
+        fuck = 1;
         fortestReverse(treeRoot);
         logger.info("————————————————————");
     }

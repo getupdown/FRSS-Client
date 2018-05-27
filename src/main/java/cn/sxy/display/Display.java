@@ -2,11 +2,10 @@ package cn.sxy.display;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -18,11 +17,11 @@ public class Display {
 
     private static Logger logger = LoggerFactory.getLogger(Display.class);
 
-    public static void main(String[] args) {
+    public void show() {
         // 创建 JFrame 实例
         JFrame frame = new JFrame("Login Example");
         // Setting the width and height of frame
-        frame.setSize(350, 200);
+        frame.setSize(1000, 600);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         /* 创建面板，这个类似于 HTML 的asd div 标签
@@ -41,40 +40,52 @@ public class Display {
         frame.setVisible(true);
     }
 
-    private static void placeComponents(JPanel panel) {
+    public static void main(String[] args) {
+        Display display = new Display();
+        display.show();
+    }
+
+    private void placeComponents(JPanel panel) {
 
         /* 布局部分我们这边不多做介绍
          * 这边设置布局为 null
          */
         panel.setLayout(null);
 
-        // 创建 JLabel
-        JLabel userLabel = new JLabel("User:");
-        /* 这个方法定义了组件的位置。
-         * setBounds(x, y, width, height)
-         * x 和 y 指定左上角的新位置，由 width 和 height 指定新的大小。
-         */
-        userLabel.setBounds(10, 20, 80, 25);
-        panel.add(userLabel);
-
         /*
          * 创建文本域用于用户输入
          */
+
         JTextArea userText = new JTextArea();
-        userText.setBounds(20, 20, 200,200);
+        userText.setBounds(60, 60, 550, 430);
         userText.setRows(20);
         userText.setColumns(40);
-        panel.add(userText);
+
+        JScrollPane js = new JScrollPane(userText);
+        js.setBounds(60, 60, 550, 430);
+        js.setVerticalScrollBarPolicy(
+                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        panel.add(js);
+
+        JTable jtAble = new JTable();
+        jtAble.setBounds(708, 60, 220, 430);
+        panel.add(jtAble);
 
         userText.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 logger.info("在{}插入{}个字符", e.getOffset(), e.getLength());
+                // 构造插入信息
+                //Message msg = MessageFactory.newInsertMessage(e.getOffset(), e.getLength());
+                //fileMessageHandler.Receive(msg);
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
                 logger.info("删掉从{}以后{}个字符", e.getOffset(), e.getLength());
+                // 构造删除信息
+                // Message msg = MessageFactory.newRemoveMessage(e.getOffset(), e.getLength());
+                // fileMessageHandler.Receive(msg);
             }
 
             @Override
@@ -85,24 +96,10 @@ public class Display {
             }
         });
 
-//        // 输入密码的文本域
-//        JLabel passwordLabel = new JLabel("Password:");
-//        passwordLabel.setBounds(10, 50, 80, 25);
-//        panel.add(passwordLabel);
-//
-//        passwordLabel.requestFocus();
+        JButton jButton = new JButton();
+        jButton.setBounds(200, 515, 150, 40);
+        jButton.setText("保存");
+        panel.add(jButton);
 
-        /*
-         *这个类似用于输入的文本域
-         * 但是输入的信息会以点号代替，用于包含密码的安全性
-         */
-//        JPasswordField passwordText = new JPasswordField(20);
-//        passwordText.setBounds(100, 50, 165, 25);
-//        panel.add(passwordText);
-
-        // 创建登录按钮
-        JButton loginButton = new JButton("login");
-        loginButton.setBounds(10, 80, 80, 25);
-        panel.add(loginButton);
     }
 }
